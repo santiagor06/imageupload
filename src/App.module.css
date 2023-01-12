@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+.drop{
+  border: 5px;
+  border-radius: 5px;
+  border-color: black;
+}
