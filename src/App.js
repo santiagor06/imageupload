@@ -3,13 +3,15 @@ import Dropzone from "react-dropzone";
 import axios from "axios";
 import { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import icon from "./images/icon.png";
+import icon from "./images/icon1.jpg";
 
 function App() {
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(
+    "http://res.cloudinary.com/dgs9dnzy0/image/upload/v1673628574/prueba/tku5lnfhn9jxkiedb9jp.png"
+  );
   const name = "dgs9dnzy0";
-
+  console.log(image);
   const handleOnDrop = async (file) => {
     try {
       console.log(file);
@@ -30,13 +32,20 @@ function App() {
   return (
     <div className={style.container}>
       {loading ? (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        <div className={style.load}>
+          <div className={style.spin}>
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+          <div className={style.up}>
+            <p>Uploading...</p>
+          </div>
+        </div>
       ) : (
         <div className={style.main}>
           {image ? (
-            <img src={image} alt="image" />
+            <img src={image} alt="icon" />
           ) : (
             <div>
               <div className={style.title}>
