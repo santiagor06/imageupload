@@ -4,14 +4,23 @@ import axios from "axios";
 import { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import icon from "./images/icon1.jpg";
-
+import succes from "./images/succes.png";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import { Toaster, toast } from "react-hot-toast";
+import { useDropzone } from "react-dropzone";
 function App() {
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState(
-    "http://res.cloudinary.com/dgs9dnzy0/image/upload/v1673628574/prueba/tku5lnfhn9jxkiedb9jp.png"
-  );
+  const [image, setImage] = useState("");
+
   const name = "dgs9dnzy0";
-  console.log(image);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(image);
+    toast.success("Copied");
+  };
+
   const handleOnDrop = async (file) => {
     try {
       console.log(file);
@@ -45,7 +54,26 @@ function App() {
       ) : (
         <div className={style.main}>
           {image ? (
-            <img src={image} alt="icon" />
+            <div className={style.succes}>
+              <img className={style.check} src={succes} alt="icon" />
+              <p className={style.title}>Uploaded Successfully!</p>
+              <div>
+                <img className={style.ima} src={image} alt="icon" />
+              </div>
+              <div className={style.copy}>
+                <InputGroup value={image} className="mb-3">
+                  <Form.Control value={image} aria-describedby="basic-addon2" />
+                  <Button
+                    onClick={handleCopy}
+                    variant="primary"
+                    id="button-addon2"
+                  >
+                    Copy Link
+                  </Button>
+                </InputGroup>
+              </div>
+              <Toaster position="top-center" />
+            </div>
           ) : (
             <div>
               <div className={style.title}>
@@ -60,8 +88,11 @@ function App() {
                   {({ getRootProps, getInputProps }) => (
                     <div {...getRootProps({ className: "dropzone" })}>
                       <input {...getInputProps()} />
-                      <img src={icon} alt="icon" />
-                      <p>Drag & Drop your image here</p>
+                      <div className={style.indrop}>
+                        <img className={style.iconm} src={icon} alt="icon" />
+
+                        <p>Drag & Drop your image here</p>
+                      </div>
                     </div>
                   )}
                 </Dropzone>

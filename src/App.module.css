@@ -9,7 +9,7 @@
 .drop{
   box-sizing: border-box;
   width: 338px;
-  height: 218.9px;
+  height: 270px;
 display: flex;
 
 align-items: center;
@@ -23,7 +23,7 @@ font-style: normal;
 font-weight: 500;
 font-size: 12px;
 line-height: 18px;
-
+margin-top: 25px;
   
 }
 .main{
@@ -32,7 +32,7 @@ line-height: 18px;
   border-color: black;
   background-color: white;
   width: 25vw;
-  height: 50vh;
+  height: 58vh;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 display: flex;
 justify-content: center;
@@ -82,9 +82,61 @@ margin-top: 20px;
   margin-top: 2px;
   color: #6e6868;
 }
-img{
+.iconm{
   width: 100px;
   height: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-left: 20%;
+  margin-top: 10px;
+
+}
+.indrop{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.ima{
+  width: 350px;
+  height: 250px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+.succes{
+  display: flex;
+  align-items: center;
+  margin-top: 7%;
+  
+  flex-direction: column;
+}
+.check{
+  width: 35px;
+  height: 35px;
+}
+.copy{
+  margin-top: 20px;
+  width: 350px;
+}
+.or{
+  font-family: 'Montserrat';
+  color: #BDBDBD;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 18px;
+margin-top: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.choose{
+  font-family: 'Montserrat';
+
+font-style: normal;
+
+margin-top: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
