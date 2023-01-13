@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Toaster, toast } from "react-hot-toast";
-import { useDropzone } from "react-dropzone";
+
 function App() {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
