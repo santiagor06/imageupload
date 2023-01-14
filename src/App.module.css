@@ -27,12 +27,12 @@ margin-top: 25px;
   
 }
 .main{
-  border: 5px;
-  border-radius: 15px;
+  border: none;
+  border-radius: 20px;
   border-color: black;
   background-color: white;
   width: 25vw;
-  height: 58vh;
+  height: 60vh;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 display: flex;
 justify-content: center;
